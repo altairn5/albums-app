@@ -1,13 +1,15 @@
 var express = require('express'),
-app = express(),
-bodyParser = require('body-parser');
+db = require('./models'),
+bodyParser = require('body-parser'),
+path = require('path'),
+app = express()
 
-var port = process.env.PORT || 3000;
+app.set('port',(process.env.PORT || 3000));
 
 
 
 
 
-app.listen(port, function(){
+app.listen(app.get('port'), function(){
 	console.log("Albums-app Listening at Port 3000");
 })
