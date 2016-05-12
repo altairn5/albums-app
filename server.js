@@ -1,5 +1,5 @@
 var express = require('express'),
-// db = require('./models'),
+db = require('./models'),
 bodyParser = require('body-parser'),
 path = require('path'),
 views,
