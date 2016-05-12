@@ -1,0 +1,23 @@
+{
+  "name": "albums-app",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Humberto Calero <altairn5@uga.edu>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "handlebars": "^4.0.5"
+  }
+}
