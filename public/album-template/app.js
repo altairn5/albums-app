@@ -15,6 +15,7 @@ function renderHBS(data){
 	console.log('Rendering data for = ', JSON.stringify(data));
 	var albumHTML = $('#hbs-template').html();
 	var hbscompiledTemplate = Handlebars.compile(albumHTML);
-	var html = hbscompiledTemplate(data);
-	$('#albums').prepend(html);
+	var renderAlbums = hbscompiledTemplate(data);
+	$('#albums').prepend(renderAlbums);
+
 }
