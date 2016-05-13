@@ -8,6 +8,8 @@ var db = require('../models');
 
 /*Album Controllers*/
 
+/*Get All Albums*/
+
 function index(req, res){
 
   db.Album.find({}, function(err, allAlbums){
@@ -20,7 +22,29 @@ function index(req, res){
   });
 }
 
+
+/* Create a New Album */
+
 function create(req, res){
+
+  console.log("Form Body Coming In = ", req.body)
+
+  var newAlbum = {};
+  var genre = req.body.genres.split(',').map(function(genre){
+              /*Trim Methods Removes String White Spaces*/
+              return genre.trim();
+  })
+
+  newAlbum = req.body
+  newAlbum.genres = genre;
+
+
+  db.Album.create(newAlbum, function(err, album){
+
+    if(err){ console.log("err is = ", err);}
+    console.log("Album created looks like ", album);
+    res.json(album);
+  });
 
 }
 
