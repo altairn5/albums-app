@@ -4,18 +4,35 @@ var albumForm;
 $(document).ready(function(){
 	console.log('paged has loaded!');
 
+
 	/*Get All Albums*/
 	getAllAlbums();
 
 	/*Post a New Album*/
 	$('.form-horizontal').on('submit', function(event){
-    
+    	
     	event.preventDefault();
 		albumForm = $(this).serialize();
-		postAnewAlbum(albumForm);
-		
 
+		/*Call New Album Function*/
+		postAnewAlbum(albumForm);
+		$(this).trigger('reset');
 	});
+
+	/*Add New Genre*/
+
+	$('select#genres').on('change', function(e){
+
+		var genreType = $(this).find('option:selected').val();
+		
+		var genreList = $('<input class="btn" type="button"><button class="btn">x</button></input>)');
+		
+		var $element = genreList.val(genreType);
+
+		$('.genres').append($element);
+
+	})
+
 });
 
 
